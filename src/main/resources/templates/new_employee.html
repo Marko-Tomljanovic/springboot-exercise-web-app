@@ -17,13 +17,13 @@
 
 		<form action="#" th:action="@{/saveEmployee}" th:object="${employee}" method="POST">
 		
-			<input type="text" th:form="*{firstName}"
+			<input type="text" th:field = "*{firstName}"
 				placeholder="Employee First Name" class="form-control mb-4 col-4">
 
-			<input type="text" th:form="*{lastName}"
+			<input type="text" th:field = "*{lastName}"
 				placeholder="Employee Last Name" class="form-control mb-4 col-4">
 
-			<input type="text" th:form="*{email}" placeholder="Employee Email"
+			<input type="text" th:field = "*{email}" placeholder="Employee Email"
 				class="form-control mb-4 col-4">
 
 			<button type="submit" class="btn btn-info col-2">Spremi
