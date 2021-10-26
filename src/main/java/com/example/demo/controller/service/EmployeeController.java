@@ -27,6 +27,7 @@ public class EmployeeController {
 	@GetMapping("/showNewEmployeeForm")
 	public String showNewEmployeeForm(Model model) {
 		Employee employee = new Employee();
+		employee.setFirstName("Marko");
 		model.addAttribute("employee", employee);
 		return "new_employee";
 	}
@@ -41,7 +42,12 @@ public class EmployeeController {
 	@GetMapping("/showFormForUpdate/{id}")
 	public String showFormForUpdate(@PathVariable(value = "id") long id, Model model) {
 
-		Employee employee = employeeSevice.getEmployeeById(id);
+		Employee employee = new Employee();
+		employee = employeeSevice.getEmployeeById(id);
+		/*
+		 * employee.setFirstName("Horvat"); employee.setLastName("Horvatiničić");
+		 * employee.setEmail("horvath@gmail.com");
+		 */
 
 		model.addAttribute("employee", employee);
 		return "update_employee";
